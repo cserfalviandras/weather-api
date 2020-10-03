@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OpenWeatherApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/city-weather/{city}', 'OpenWeatherApiController@getWeatherForCity');
+Route::get('/city-weather/{city}', [OpenWeatherApiController::class, 'getWeatherForCity']);
