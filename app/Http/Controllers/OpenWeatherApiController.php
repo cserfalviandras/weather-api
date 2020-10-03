@@ -6,16 +6,16 @@ use App\Services\WeatherDataRetriver;
 
 class OpenWeatherApiController extends Controller
 {
-    private $weatherData;
+    private $weatherDataRetriver;
 
     public function __construct(WeatherDataRetriver $weatherDataRetriver)
     {
-        $this->weatherData = $weatherDataRetriver;
+        $this->weatherDataRetriver = $weatherDataRetriver;
     }
 
     public function getWeatherForCity($city)
     {
-        $data = $this->weatherData->get($city);
+        $data = $this->weatherDataRetriver->get($city);
         return $data;
     }
 }
