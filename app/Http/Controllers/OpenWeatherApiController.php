@@ -15,7 +15,7 @@ class OpenWeatherApiController extends Controller
 
     public function getWeatherForCity($city)
     {
-        $data = $this->weatherDataRetriver->get($city);
+        $data = $this->weatherDataRetriver->getCurrentWeather($city);
         return $data;
     }
 }
