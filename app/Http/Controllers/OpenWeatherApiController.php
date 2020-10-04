@@ -16,6 +16,14 @@ class OpenWeatherApiController extends Controller
     public function getWeatherForCity($city)
     {
         $data = $this->weatherDataRetriver->getCurrentWeather($city);
+
+        return $data;
+    }
+
+    public function getDetailedForecast($lat, $lon)
+    {
+        $data = $this->weatherDataRetriver->getDetailedForecast($lat, $lon);
+        
         return $data;
     }
 }

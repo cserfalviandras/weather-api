@@ -19,3 +19,5 @@ Route::get('/', function () {
 });
 
 Route::get('/city-weather/{city}', [OpenWeatherApiController::class, 'getWeatherForCity']);
+
+Route::get('/detailed-forecast/{lat}/{lan}', [OpenWeatherApiController::class, 'getDetailedForecast']);
